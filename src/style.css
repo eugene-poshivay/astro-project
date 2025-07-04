@@ -84,7 +84,7 @@ img {
 }
 
 body {
-    margin: 1rem;
+    margin: 0;
     color: var(--clr-body);
     font-family: var(--ff-base);
     line-height: 1.6;
