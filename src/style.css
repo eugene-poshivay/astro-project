@@ -84,16 +84,14 @@ img {
 }
 
 body {
-    margin: 0;
+    margin: 1rem;
     color: var(--clr-body);
     font-family: var(--ff-base);
     line-height: 1.6;
 }
 
 main,
-section,
-header,
-footer {
+section {
     container-type: inline-size;
 }
 
