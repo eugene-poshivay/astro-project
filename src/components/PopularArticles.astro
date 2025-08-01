@@ -1,36 +1,26 @@
 ---
 const { class: className } = Astro.props
+
+const response = await fetch( "https://excellent-cheese-a20f6a488c.strapiapp.com/api/articles?populate=*");
+const articles = await response.json();
+const articleList = articles.data;
 ---
 
 <h2 class="visually-hidden">Popular articles</h2>
 <ul role="list" class:list={className}>
-    <li>
+     {articleList.map((article: any) => (
+     <li>
         <article>
-            <img src="/images/image-retro-pcs.jpg" alt="" />
-            <div>
-                <h3><a href="">Reviving Retro PCs</a></h3>
-                <p>What happens when old PCs are given modern upgrades?</p>
-            </div>
-        </article>
-    </li>
-    <li>
-        <article>
-            <img src="/images/image-retro-pcs.jpg" alt="" />
-            <div>
-                <h3>Reviving Retro PCs</h3>
-                <p>What happens when old PCs are given modern upgrades?</p>
-            </div>
-        </article>
-    </li>
-    <li>
-        <article>
-            <img src="/images/image-retro-pcs.jpg" alt="" />
+            <img src={article.cover.url} alt="" />
             <div class="flow">
                 <h3><a href="">Reviving Retro PCs</a></h3>
                 <p>What happens when old PCs are given modern upgrades?</p>
             </div>
         </article>
     </li>
+  ))}
+   
+    
 </ul>
 
 <style>
