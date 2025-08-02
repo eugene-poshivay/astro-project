@@ -2,6 +2,7 @@
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import FeaturedArticle from '../components/FeaturedArticle.astro'
 import PopularArticles from '../components/PopularArticles.astro'
+import Articles from '../components/Articles.jsx'
 const title = 'FEM Blog with CMS'
 ---
 
@@ -37,5 +38,5 @@ const title = 'FEM Blog with CMS'
         </div>
     </div>
     <PopularArticles class="three-columns section" />
+    <Articles client:load />
 </PrimaryLayout>
-
